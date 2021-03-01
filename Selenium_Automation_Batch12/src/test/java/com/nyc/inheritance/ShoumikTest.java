@@ -10,8 +10,15 @@ public class ShoumikTest {
 
 	}
 
+//	public static void main(String[] args) {
+//		ShoumikTest obj = new ShoumikTest();
+//		obj.getMath();
+//	}
+	
+
 	public static void main(String[] args) {
 		ShoumikTest obj = new ShoumikTest();
 		obj.getMath();
-	}
+}
+	
 }
