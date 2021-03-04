@@ -6,55 +6,45 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class NewLoginTest {
-	static WebDriver  driver;
-	// 1. How to open the browser in selenium?	
-	public static void main(String[] args) {		                   
-	 // System is a java final class    // Driver name  Location of driver or path
-		System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
-		
-    // Interface  Object   Java keyword & chrome is a Class
-	  driver  =  new ChromeDriver();  // Up-casting 
-		
-       // 2. How you enter the URL	
-	   driver.get("https://www.ups.com/lasso/login?loc=en_US&returnto=https%3A%2F%2Fwww.ups.com%2Fdoapp%2FSignUp%3Floc%3Den_US");
-	  
-		  
-	// Navigate method help to go forward & backward 
-	// driver.navigate().to("https://www.facebook.com/");
-	// 3. What is the different between get & navigate 
-
-	  
-    // 4. How to maximize the browser
-	  driver.manage().window().maximize();
-	  
-	  // How to find the web-element ?
-	  
-	  //driver.findElement(By.partialLinkText("Sign up / Log in")).click();
-	 // driver.findElement(By.linkText("Sign up / Log in")).click();
-	  
-	  
-	  driver.findElement(By.id("email")).sendKeys("alammohammed79@gmail.com");
-	  
-	  
-	WebElement obj =  driver.findElement(By.id("pwd"));
-	obj.sendKeys("SAYEDawan2008");
 	
-	obj.submit();
+	public static void main(String[] args) {		                   
+	 
+	System.setProperty("webdriver.chrome.driver", "/Users/macbookpro/Downloads/chromedriver");
+	// select set property after System.
+    // Interface  Object   Java keyword & chrome is a Class
+	  WebDriver driver  =  new ChromeDriver();  // Up-casting 
+		
+       // 2. How you enter the URL ? By driver.get method and driver.anvigate method
+	 //  driver.get("https://www.facebook.com/"); // To open URL or web page directly 
+	   driver.get("https://www.ups.com/"); // To open URL or webpage directly by click button
+	 // driver.navigate().to("https://www.facebook.com/");//To go forward & backward and refresh webpage
+	 // driver.navigate().back(); // to back webpage
+	 // driver.navigate().forward();// to forward webpage
+	 //driver.navigate().refresh();// to refresh
+    // 4. How to maximize the browser? see as below:
+	  //  driver.manage().window().maximize(); // to maximize the webpage
+	  // driver.quit(); // driver.quit method to close the browser and server
+	 //driver.close();// driver.close method only to close the browser 
+	   //and help to close IE(internet explorer) browser
 	  
-	  ///driver.findElement(By.id("submitBtn")).click();
+	  // How to find the web-element ? By driver.findelement and by driver.findelements
 	  
-	  System.out.println(driver.getTitle());
+	//  driver.findElement(By.partialLinkText("Sign up / Log in")).click(); //by locator partialLinkText for click 
+	   driver.findElement(By.linkText("Sign Up")).click();// /by LinkText for click
+	 driver.findElement(By.id("email")).sendKeys("alammohammed79@gmail.com");
+	  driver.findElement(By.id("pwd")).sendKeys("SAYEDawan2008");
+	  driver.findElement(By.id("submitBtn")).click();
+	//  System.out.println(driver.getTitle()); // to verify the page
+	// what is the difference between find element and find elements
+	// find element - for one element, find elements - for more than one element
+	  
+	 System.out.println(driver.getTitle()); // to verify the page 
 	   
 	  // How to close the browser  
 	   driver.quit();
 	  // driver.close();
-	    
-	 // 5. What is the different between close & quit
-	  
-	  // Ans:- Driver.quit method close the browser as well as close the server
-	  // Driver.close only close the browser 
-	  // Driver.close help to close the IE browser
-	  
+	  // driver.findElement(By.partialLinkText("Sign up / Log in")).click();
+	   
+	   
 	}
-
 }
